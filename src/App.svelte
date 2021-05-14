@@ -46,6 +46,22 @@
 import InputBuscadorDePais from "./Input.svelte";
 
 
+var urlTodosLosPaises = `https://disease.sh/v3/covid-19/countries`;
+  fetch(urlTodosLosPaises)
+            .then((response) => response.json())
+            .then((paises) => {
+                //console.log(paises.length);
+                var element = document.getElementById("listado");
+                for(var i = 0; i <paises.length; i++){
+                    //console.log(paises[i].country)
+                    element.innerHTML += paises[i].country + " - " 
+                }
+
+                
+                
+            }); 
+
+
 </script>
 
 <main>
@@ -59,7 +75,10 @@ import InputBuscadorDePais from "./Input.svelte";
 	casos positivos actuales {casosActivosPais} y una incidencia total de {muertesPorMillon} por millon de habitantes <br>
 pertenece a {continente} y tiene {poblacion} habitantes</h2> -->
 
+<h2>Lista de paises para buscar</h2>
+    <p id="listado"> </p>
 <h3> Busqueda de países: </h3>
+<p>Escoge cualquier pais de la lista anterior para ver sus datos relacionados con el covid-19</p>
 <InputBuscadorDePais />
 	
 
@@ -73,6 +92,7 @@ pertenece a {continente} y tiene {poblacion} habitantes</h2> -->
 
 
 <style>
+	
 	main {
 		text-align: center;
 		padding: 1em;
@@ -93,6 +113,9 @@ pertenece a {continente} y tiene {poblacion} habitantes</h2> -->
 	h3{
 		color: blue;
 		font-size: xx-large;
+	}
+	#listado{
+		font-weight: bold;
 	}
 
 	@media (min-width: 640px) {
