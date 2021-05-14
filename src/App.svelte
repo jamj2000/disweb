@@ -1,21 +1,19 @@
 <script>
 	export let name;
 
-
 	let globalDeaths;
 
-    fetch('https://disease.sh/v3/covid-19/all')
-        .then((response) => response.json())
-        .then((global) => {
-            globalDeaths = global.deaths;
-        });
+	fetch("https://disease.sh/v3/covid-19/all")
+		.then((response) => response.json())
+		.then((global) => {
+			globalDeaths = global.deaths;
+		});
 
 	let nombrePais;
-	nombrePais = 'spain';
+	nombrePais = "spain";
 
-	var url = 'https://disease.sh/v3/covid-19/countries/'+ nombrePais;
+	var url = "https://disease.sh/v3/covid-19/countries/" + nombrePais;
 
-	
 	let nombreOficial;
 	let casosPais;
 	let muertesPais;
@@ -26,12 +24,10 @@
 	let poblacion;
 	let continente;
 
-
-
 	fetch(url)
-        .then((response) => response.json())
-        .then((pais) => {
-            nombreOficial = pais.country;
+		.then((response) => response.json())
+		.then((pais) => {
+			nombreOficial = pais.country;
 			casosPais = pais.cases;
 			muertesPais = pais.deaths;
 			muertesPaisHoy = pais.todayDeaths;
@@ -40,28 +36,21 @@
 			muertesPorMillon = pais.deathsPerOneMillion;
 			poblacion = pais.population;
 			continente = pais.continent;
-        });
+		});
 
-		
-import InputBuscadorDePais from "./Input.svelte";
+	import InputBuscadorDePais from "./Input.svelte";
 
-
-var urlTodosLosPaises = `https://disease.sh/v3/covid-19/countries`;
-  fetch(urlTodosLosPaises)
-            .then((response) => response.json())
-            .then((paises) => {
-                //console.log(paises.length);
-                var element = document.getElementById("listado");
-                for(var i = 0; i <paises.length; i++){
-                    //console.log(paises[i].country)
-                    element.innerHTML += paises[i].country + " - " 
-                }
-
-                
-                
-            }); 
-
-
+	var urlTodosLosPaises = `https://disease.sh/v3/covid-19/countries`;
+	fetch(urlTodosLosPaises)
+		.then((response) => response.json())
+		.then((paises) => {
+			//console.log(paises.length);
+			var element = document.getElementById("listado");
+			for (var i = 0; i < paises.length; i++) {
+				//console.log(paises[i].country)
+				element.innerHTML += paises[i].country + " - ";
+			}
+		});
 </script>
 
 <main>
@@ -75,28 +64,20 @@ var urlTodosLosPaises = `https://disease.sh/v3/covid-19/countries`;
 	casos positivos actuales {casosActivosPais} y una incidencia total de {muertesPorMillon} por millon de habitantes <br>
 pertenece a {continente} y tiene {poblacion} habitantes</h2> -->
 
-<h2>Lista de paises para buscar</h2>
-    <p id="listado"> </p>
-<h3> Busqueda de países: </h3>
-<p>Escoge cualquier pais de la lista anterior para ver sus datos relacionados con el covid-19</p>
-<InputBuscadorDePais />
-	
-
+	<h2>Lista de paises para buscar</h2>
+	<p id="listado" />
+	<h3>Busqueda de países:</h3>
+	<p>
+		Escoge cualquier pais de la lista anterior para ver sus datos
+		relacionados con el covid-19
+	</p>
+	<InputBuscadorDePais />
 </main>
 
-
-
-
-
-
-
-
 <style>
-	
 	main {
 		text-align: center;
 		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
 	}
 
@@ -106,21 +87,27 @@ pertenece a {continente} y tiene {poblacion} habitantes</h2> -->
 		font-size: 4em;
 		font-weight: 100;
 	}
-	h2{
+	h2 {
 		color: gray;
 		font-size: medium;
 	}
-	h3{
+	h3 {
 		color: blue;
 		font-size: xx-large;
 	}
-	#listado{
+	#listado {
 		font-weight: bold;
+		width: 100%;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
+	@media (max-width: 1024px) {
+		#listado {
+			font-size: 10px;
+		}
+	}
+	@media (max-width: 765px) {
+		#listado {
+			font-size: 5px;
 		}
 	}
 </style>

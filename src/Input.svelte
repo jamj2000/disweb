@@ -101,34 +101,38 @@
     />
 
     <div class={estado} id="datosPais">
-        <h1>{nombreOficial}</h1>
+        <h6 class="centrado">Según Woldometer</h6>
+        <h1>{nombreOficial} ({continente})</h1>
+        <h4 class="centrado">{poblacion} habitantes</h4>
         <h3>
             Casos totales: <span class="resaltarDato">{casosPais}</span> -
             Muertos: <span class="resaltarDato">{muertesPais}</span>
         </h3>
 
         <h3>
-            Casos positivos: <span class="resaltarDato">{casosPaisHoy}</span>
+            Casos positivos hoy: <span class="resaltarDato">{casosPaisHoy}</span
+            >
             <br />
-            Muertes: <span class="resaltarDato">{muertesPaisHoy}</span>
+            Muertes hoy: <span class="resaltarDato">{muertesPaisHoy}</span>
         </h3>
-
-        <h2>
-            Casos positivos actuales <span class="resaltarDato"
+        <h3>
+            Casos positivos actualmente <span class="resaltarDato"
                 >{casosActivosPais}</span
             >
-        </h2>
-        <h2>
+        </h3>
+        <h3>
+            Casos positivos totales: <span class="resaltarDato"
+                >{casosPais}</span
+            >
+            <br />
+            Muertes totales: <span class="resaltarDato">{muertesPais}</span>
+        </h3>
+
+        <h3>
             Incidencia total de <span class="resaltarDato"
                 >{muertesPorMillon}</span
             > por millon de habitantes
-        </h2>
-
-        <h2>
-            <span class="resaltarDato">{nombreOficial}</span> pertenece a
-            <span class="resaltarDato">{continente}</span>
-            y tiene <span class="resaltarDato">{poblacion}</span> habitantes
-        </h2>
+        </h3>
     </div>
 
     <!-- <h2>
@@ -163,24 +167,99 @@
     .resaltarDato {
         color: red;
     }
-    
+
     #datosPais {
         margin-left: auto;
         margin-right: auto;
         width: 50%;
         text-align: left;
-        background-color: #A9CCE3;
+        background-color: #a9cce3;
         border-radius: 10%;
         padding: 1%;
-        
-
     }
     #datosPais h1 {
         color: black;
         text-transform: uppercase;
         font-style: italic;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
         text-align: center;
         font-size: 50px;
+        line-height: 5px;
+    }
+    .centrado {
+        text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+        .oculto {
+        display: none;
+    }
+    .visible {
+        display: block;
+    }
+    .resaltarDato {
+        color: red;
+    }
+
+    #datosPais {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        text-align: left;
+        background-color: #a9cce3;
+        border-radius: 10%;
+        padding: 1%;
+        font-size: 10px;
+    }
+    #datosPais h1 {
+        color: black;
+        text-transform: uppercase;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        text-align: center;
+        font-size: 25px;
+        line-height: 5px;
+    }
+    .centrado {
+        text-align: center;
+    }
+    }
+
+
+    @media (max-width: 765px) {
+        .oculto {
+        display: none;
+    }
+    .visible {
+        display: block;
+    }
+    .resaltarDato {
+        color: red;
+    }
+
+    #datosPais {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        text-align: left;
+        background-color: #a9cce3;
+        border-radius: 10%;
+        padding: 1%;
+    }
+    #datosPais{
+        font-size: 8px;
+    }
+    #datosPais h1 {
+        color: black;
+        text-transform: uppercase;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        text-align: center;
+        font-size: 15px;
+        line-height: 5px;
+    }
+    .centrado {
+        text-align: center;
+    }
     }
 </style>
