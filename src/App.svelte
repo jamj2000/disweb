@@ -1,7 +1,13 @@
 <script>
+	import InputBuscadorDePais from "./Input.svelte";
+
 	export let name;
 
-	let globalDeaths;
+	import { Router } from "svelte-routing";
+	import Nav from "./Nav.svelte";
+	import Contenido from "./Contenido.svelte";
+
+	/* let globalDeaths;
 
 	fetch("https://disease.sh/v3/covid-19/all")
 		.then((response) => response.json())
@@ -38,7 +44,6 @@
 			continente = pais.continent;
 		});
 
-	import InputBuscadorDePais from "./Input.svelte";
 
 	var urlTodosLosPaises = `https://disease.sh/v3/covid-19/countries`;
 	fetch(urlTodosLosPaises)
@@ -50,35 +55,39 @@
 				//console.log(paises[i].country)
 				element.innerHTML += paises[i].country + " - ";
 			}
-		});
+		}); */
 </script>
 
 <main>
-	<!-- <h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
-
-	<!-- <h1>Muertos globales por covid: {globalDeaths}</h1> -->
-	<!-- <h2>URL: {url}</h2> -->
-	<!-- <h2> Pais: {nombreOficial} con casos totales: {casosPais} y {muertesPais} muertos <br> 
-		hoy hay {casosPaisHoy} casos positivos y han muerto {muertesPaisHoy} personas <br>
-	casos positivos actuales {casosActivosPais} y una incidencia total de {muertesPorMillon} por millon de habitantes <br>
-pertenece a {continente} y tiene {poblacion} habitantes</h2> -->
-
-	<h2>Lista de paises para buscar</h2>
-	<p id="listado" />
-	<h3>Busqueda de países:</h3>
+	<Router>
+		<Nav />
+		<Contenido />
+	</Router>
+	<!-- <h3>Busqueda de países:</h3>
 	<p>
 		Escoge cualquier pais de la lista anterior para ver sus datos
 		relacionados con el covid-19
 	</p>
 	<InputBuscadorDePais />
+	<footer>
+	<h2>Lista de paises para buscar</h2>
+	<p id="listado" />	
+	</footer> -->
 </main>
 
 <style>
+	:global(body) {
+		background-color: #a58faa;
+		margin: 0;
+		padding: 0;
+		font-display: swap; /* Para mejorar rendimiento en carga inicial */
+	}
+	:global(a:hover) {
+		text-decoration: none;
+		cursor: pointer;
+	}
 	main {
 		text-align: center;
-		padding: 1em;
-		margin: 0 auto;
 	}
 
 	h1 {

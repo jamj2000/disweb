@@ -1,0 +1,187 @@
+<script>
+</script>
+
+<main>
+    <h1>BIENVENIDOS A INFOCOVID</h1>
+
+    <div>
+        <h2 class="subtitulo">¿Que veremos en esta web?</h2>
+        <div class="queVeremos">
+            <div class="contenidoPaises divIndividual">
+                <h2>Informacion relacionada con los paises</h2>
+                <p>
+                    En la seccion Paises veremos informacion detallada sobre los
+                    casos de covid en tiempo real. Datos como los casos, las
+                    muertes o los recuperados que ha tenido cada pais desde que
+                    comenzó la pandemia.
+                    <br />
+                    También podremos ver datos como los casos, muertes y recuperados
+                    que tiene a dia de hoy cada pais, una informacion que se actualizará
+                    cada 10 minutos para tener la mayor precisión posible.
+                    <br />
+                    Para dar mas información sobre los países que se muestran, añadiremos
+                    datos como el continente al que pertenece o la poblacion total
+                    de dicho país.
+                </p>
+            </div>
+
+            <div class="contenidoContinentes divIndividual">
+                <h2>Informacion relacionada con los continentes</h2>
+                <p>
+                    En la seccion Continentes veremos informacion detallada
+                    sobre los casos de covid en tiempo real. Datos como los
+                    casos, las muertes o los recuperados que ha tenido cada
+                    continente desde que comenzó la pandemia.
+                    <br />
+                    También podremos ver datos como los casos, muertes y recuperados
+                    que tiene a dia de hoy cada continente, una informacion que tambien
+                    actualizará cada 10 minutos para tener la mayor precisión posible.
+                    <br />
+                    Para dar mas información sobre los países que se muestran, añadiremos
+                    datos como el continente al que pertenece o la población total
+                    de dicho continente.
+                    <br />
+                    Además podremos ver la cantidad de test que se han realizado
+                    e informacion sobre la latitud y longitud del continente.
+                </p>
+            </div>
+
+            <div class="contenidoHistorico divIndividual">
+                <h2>Datos historicos sobre el Covid</h2>
+                <p>
+                    En este apartado veremos graficas con los datos de los
+                    ultimos 30 dias sobre el covid en cada país. <br />
+                    En estas graficas veremos los datos sobre los casos, muertes
+                    y recuperaciones.
+                </p>
+            </div>
+        </div>
+        <div class="divAgradecimiento">
+            <h4>
+                Todo ello ha sido posible gracias a la api
+                <a href="https://www.disease.sh" target="blank">disease.sh </a>
+                y a la web de donde extrae la información
+                <a href="https://www.worldometers.info/" target="blank"
+                    >Worldometer</a
+                >.
+            </h4>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="informacionAlumno">
+            <p>
+                Esta web ha sido elaborada por Juan Manuel Fernández Velarde,
+                alumno del I.E.S Luis Vélez de Guevara como proyecto de fin de
+                grado para el CFGS de Desarrollo de Aplicaciones Web
+            </p>
+        </div>
+        <div class="redes">
+            <h3>Redes sociales:</h3>
+            <ul class="listaRedes">
+                <li>
+                    <a
+                        href="https://www.linkedin.com/in/juanmanuelfernandezvelarde/"
+                        target="blank"
+                    >
+                        LinkedIn</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://www.instagram.com/juanmaferv96"
+                        target="blank"
+                    >
+                        Instagram</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://www.twitter.com/juanmaferv96"
+                        target="blank"
+                    >
+                        Twitter</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </footer>
+</main>
+
+<style>
+    :global(body) {
+        background-image: url("http://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg");
+    }
+    main {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+
+    h1 {
+        display: flex;
+        /* background-image: url("http://c.files.bbci.co.uk/D505/production/_115033545_gettyimages-1226314512.jpg"); */
+        height: 200px;
+        padding-top: 8px;
+        margin: 0;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        background-color: #ededd08c;
+    }
+    .subtitulo {
+        color: black;
+        padding: 1%;
+        background-color: rgba(255, 235, 205, 0.694);
+    }
+    .queVeremos {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        display: flex;
+        color: black;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .divIndividual {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        background-color: rgba(255, 255, 255, 0.664);
+        border-radius: 10%;
+        padding: 1%;
+        max-width: 30%;
+        min-height: 300px;
+    }
+    .divAgradecimiento {
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(255, 255, 255, 0.664);
+        padding: 5px;
+        margin-top: 15px;
+        border-radius: 10%;
+        color: black;
+    }
+    .footer {
+        background-color: black;
+        padding-bottom: 1px ;
+        
+       
+        
+    }
+    .informacionAlumno {
+        color: white;
+        margin-top: 10px;
+        padding-top: 10px;
+        text-align: center;
+    }
+    .redes {
+        color: white;
+    }
+    ul {
+        list-style: none;
+    }
+    .listaRedes {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+</style>

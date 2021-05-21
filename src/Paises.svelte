@@ -69,7 +69,7 @@ GRAFICA
                         },
                     });
  */
-    /* $: if (value.length > 3) {
+    $: if (value.length > 3) {
         console.log("Dentro del IF para grafica");
         fetch(`https://disease.sh/v3/covid-19/historical/${value}?lastdays=15`)
             .then((response) => response.json())
@@ -115,7 +115,7 @@ GRAFICA
         myChart.destroy();
         console.log("destruida")
     } 
-     */
+    
 </script>
 
 <main>
