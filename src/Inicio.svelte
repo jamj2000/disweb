@@ -80,18 +80,39 @@
                 <a
                     href="https://www.linkedin.com/in/juanmanuelfernandezvelarde/"
                     target="blank"
+                    class="enlaceFooter"
                 >
-                    LinkedIn</a
+                    <img
+                        src="/images/icons/linkedin.png"
+                        alt="logoLinkedIn"
+                        class="logoRedes"
+                    /> LinkedIn</a
                 >
             </li>
             <li>
-                <a href="https://www.instagram.com/juanmaferv96" target="blank">
-                    Instagram</a
+                <a
+                    href="https://www.instagram.com/juanmaferv96"
+                    target="blank"
+                    class="enlaceFooter"
+                >
+                    <img
+                        src="/images/icons/instagram.png"
+                        alt="logoLinkedIn"
+                        class="logoRedes"
+                    /> Instagram</a
                 >
             </li>
             <li>
-                <a href="https://www.twitter.com/juanmaferv96" target="blank">
-                    Twitter</a
+                <a
+                    href="https://www.twitter.com/juanmaferv96"
+                    target="blank"
+                    class="enlaceFooter"
+                >
+                    <img
+                        src="/images/icons/twitter.png"
+                        alt="logoLinkedIn"
+                        class="logoRedes"
+                    /> Twitter</a
                 >
             </li>
         </ul>
@@ -172,6 +193,15 @@
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
+    }
+    .logoRedes {
+        width: 30px;
+    }
+    .enlaceFooter {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
     }
 
     @media (max-width: 1024px) {

@@ -32,8 +32,6 @@
 <style>
     .navegador{
         background-color: #170a19;
-        position: relative;
-        top: 0;
         padding: 1px;
         box-shadow: 0px 1px 10px grey;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -51,8 +49,10 @@
         font-weight: bold;
         color: #a6d6d6;
     }
+
     .menu span:hover{
         color: #70416d ;
+        font-size: larger;
     }
     @media (max-width: 400px){
         .menu span{
