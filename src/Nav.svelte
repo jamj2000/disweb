@@ -54,4 +54,9 @@
     .menu span:hover{
         color: #70416d ;
     }
+    @media (max-width: 400px){
+        .menu span{
+            font-size: smaller;
+        }
+    }
 </style>

@@ -148,7 +148,7 @@
         border-radius: 10%;
         padding: 1%;
         max-width: 30%;
-        min-height: 300px;
+        min-height: 500px;
     }
     .divAgradecimiento {
         width: 98%;
@@ -162,10 +162,7 @@
     }
     .footer {
         background-color: black;
-        padding-bottom: 1px ;
-        
-       
-        
+        padding-bottom: 1px;
     }
     .informacionAlumno {
         color: white;
@@ -184,4 +181,53 @@
         justify-content: space-evenly;
         flex-wrap: wrap;
     }
+
+    @media (max-width: 1024px) {
+        .divIndividual {
+            font-size: 14.5px;
+        }
+        .divAgradecimiento {
+            font-size: small;
+        }
+        .informacionAlumno {
+            font-size: small;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .divIndividual {
+            font-size: x-small;
+            min-height: 300px;
+        }
+        .divAgradecimiento {
+            font-size: small;
+        }
+        .informacionAlumno {
+            font-size: small;
+        }
+    }
+    @media (max-width: 600px) {
+        .queVeremos {
+            flex-direction: column;
+            align-items: center;
+        }
+        .divIndividual {
+            font-size: x-small;
+            max-width: 90%;
+            min-height: 200px;
+            width: 90%;
+            margin-bottom: 10px;
+        }
+        .divAgradecimiento {
+            font-size: 10px;
+        }
+        .informacionAlumno {
+            font-size: xx-small;
+        }
+        .redes{
+            font-size: small;
+        }
+
+    }
+    
 </style>
