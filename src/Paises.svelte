@@ -75,6 +75,8 @@
 
                     labelsCasos = Object.keys(casosPais.timeline.cases);
                     dataCasos = Object.values(casosPais.timeline.cases);
+                    labelsCasos = labelsCasos.map( x => x.split("/"))
+                                             .map( x => x[1]+"/"+x[0]+"/"+x[2]);
                
                     // INICIO GRAFICA 
 
