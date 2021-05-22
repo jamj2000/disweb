@@ -151,6 +151,7 @@
         min-height: 500px;
     }
     .divAgradecimiento {
+        max-width: 98%;
         width: 98%;
         margin-left: auto;
         margin-right: auto;
@@ -220,14 +221,14 @@
         }
         .divAgradecimiento {
             font-size: 10px;
+            max-width: 95%;
+            width: 95%;
         }
         .informacionAlumno {
             font-size: xx-small;
         }
-        .redes{
+        .redes {
             font-size: small;
         }
-
     }
-    
 </style>
