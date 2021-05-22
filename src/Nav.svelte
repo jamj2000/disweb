@@ -28,14 +28,13 @@
 </nav>
 
 <!-- 👥 -->
-
 <style>
-    .navegador{
+    .navegador {
         background-color: #170a19;
-        padding: 1px;
+        padding-top: 1px;
+        padding-bottom: 1px;
         box-shadow: 0px 1px 10px grey;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     }
     .menu {
         display: flex;
@@ -45,18 +44,28 @@
         list-style: none;
         padding: 15px;
     }
-    .menu span{
+    .menu span {
+        display: block;
         font-weight: bold;
         color: #a6d6d6;
     }
 
-    .menu span:hover{
-        color: #70416d ;
-        font-size: larger;
+    .menu span:hover {
+        color: #70416d;
+        /* font-size: larger; */
+        transition: transform 0.2s linear;
+        transform: scale(1.5);
     }
-    @media (max-width: 400px){
-        .menu span{
+
+    @media (max-width: 400px) {
+        .menu span {
             font-size: smaller;
         }
+        .menu span:hover {
+        color: #70416d;
+        /* font-size: larger; */
+        transition: transform 0.2s linear;
+        transform: scale(1.2);
+    }
     }
 </style>
