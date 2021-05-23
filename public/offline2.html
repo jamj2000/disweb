@@ -10,147 +10,166 @@
 
     <style>
         body {
-        background-image: url("/images/icons/covid.jpg");
-    }
+            background-image: url("/images/icons/covid.jpg");
+        }
 
-    * {
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    }
+        * {
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
 
-    h1 {
-        display: flex;
-        height: 200px;
-        padding-top: 8px;
-        margin: 0;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        background-color: #ededd08c;
-    }
-    .subtitulo {
-        color: black;
-        padding: 1%;
-        background-color: rgba(255, 235, 205, 0.694);
-        text-align: center;
-    }
-    .queVeremos {
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        display: flex;
-        color: black;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        
-    }
-    .divIndividual {
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        background-color: rgba(255, 255, 255, 0.664);
-        border-radius: 10%;
-        padding: 1%;
-        max-width: 30%;
-        min-height: 500px;
-    }
-    .divAgradecimiento {
-        max-width: 98%;
-        width: 98%;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: rgba(255, 255, 255, 0.664);
-        padding: 5px;
-        margin-top: 15px;
-        border-radius: 10%;
-        color: black;
-    }
-    .footer {
-        background-color: black;
-        padding-bottom: 1px;
-    }
-    .informacionAlumno {
-        color: white;
-        margin-top: 10px;
-        padding-top: 10px;
-        text-align: center;
-    }
-    .redes {
-        color: white;
-    }
-    ul {
-        list-style: none;
-    }
-    .listaRedes {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-
-    @media (max-width: 1024px) {
-        .divIndividual {
-            font-size: 14.5px;
-        }
-        .divAgradecimiento {
-            font-size: small;
-        }
-        .informacionAlumno {
-            font-size: small;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .divIndividual {
-            font-size: x-small;
-            min-height: 300px;
-        }
-        .divAgradecimiento {
-            font-size: small;
-        }
-        .informacionAlumno {
-            font-size: small;
-        }
-    }
-    @media (max-width: 600px) {
-        .queVeremos {
-            flex-direction: column;
+        h1 {
+            display: flex;
+            height: 200px;
+            padding-top: 8px;
+            margin: 0;
+            flex-wrap: nowrap;
+            justify-content: center;
             align-items: center;
+            color: black;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            background-color: #ededd08c;
         }
-        .divIndividual {
-            font-size: x-small;
-            max-width: 90%;
-            min-height: 200px;
-            width: 90%;
-            margin-bottom: 10px;
-        }
-        .divAgradecimiento {
-            font-size: 10px;
-            max-width: 95%;
-            width: 95%;
-        }
-        .informacionAlumno {
-            font-size: xx-small;
-        }
-        .redes {
-            font-size: small;
-        }
-    }
 
-    .sinConexion{
-        background-color: cornsilk;
-        color: red;
-        text-align: center;
-    }
+        .subtitulo {
+            color: black;
+            padding: 1%;
+            background-color: rgba(255, 235, 205, 0.694);
+            text-align: center;
+        }
+
+        .queVeremos {
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            display: flex;
+            color: black;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .divIndividual {
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            background-color: rgba(255, 255, 255, 0.664);
+            border-radius: 10%;
+            padding: 1%;
+            max-width: 30%;
+            min-height: 500px;
+        }
+
+        .divAgradecimiento {
+            max-width: 98%;
+            width: 98%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(255, 255, 255, 0.664);
+            padding: 5px;
+            margin-top: 15px;
+            border-radius: 10%;
+            color: black;
+        }
+
+        .footer {
+            background-color: black;
+            padding-bottom: 1px;
+        }
+
+        .informacionAlumno {
+            color: white;
+            margin-top: 10px;
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        .redes {
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .listaRedes {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 1024px) {
+            .divIndividual {
+                font-size: 14.5px;
+            }
+
+            .divAgradecimiento {
+                font-size: small;
+            }
+
+            .informacionAlumno {
+                font-size: small;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .divIndividual {
+                font-size: x-small;
+                min-height: 300px;
+            }
+
+            .divAgradecimiento {
+                font-size: small;
+            }
+
+            .informacionAlumno {
+                font-size: small;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .queVeremos {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .divIndividual {
+                font-size: x-small;
+                max-width: 90%;
+                min-height: 200px;
+                width: 90%;
+                margin-bottom: 10px;
+            }
+
+            .divAgradecimiento {
+                font-size: 10px;
+                max-width: 95%;
+                width: 95%;
+            }
+
+            .informacionAlumno {
+                font-size: xx-small;
+            }
+
+            .redes {
+                font-size: small;
+            }
+        }
+
+        .sinConexion {
+            background-color: cornsilk;
+            color: red;
+            text-align: center;
+        }
     </style>
 
 </head>
 
 
-<body>
+<body style="
+background-image: url(/images/icons/covid.jpg);">
 
 
     <h1>BIENVENIDOS A INFOCOVID</h1>
     <h2 class="sinConexion"> EN ESTOS MOMENTOS NO DISPONES DE CONEXION A INTERNET. <br>
-    POR FAVOR COMPRUEBALO Y VUELVE CUANDO DISPONGAS DE CONEXION</h2>
+        POR FAVOR COMPRUEBALO Y VUELVE CUANDO DISPONGAS DE CONEXION</h2>
 
     <div>
         <h2 class="subtitulo">¿Que veremos en esta web?</h2>
@@ -172,7 +191,7 @@
                     dicho país.
                 </p>
             </div>
-    
+
             <div class="contenidoContinentes divIndividual">
                 <h2>Informacion relacionada con los continentes</h2>
                 <p>
@@ -193,7 +212,7 @@
                     sobre la latitud y longitud del continente.
                 </p>
             </div>
-    
+
             <div class="contenidoHistorico divIndividual">
                 <h2>Datos historicos sobre el Covid</h2>
                 <p>
@@ -208,9 +227,7 @@
                 Todo ello ha sido posible gracias a la api
                 <a href="https://www.disease.sh" target="blank">disease.sh </a>
                 y a la web de donde extrae la información
-                <a href="https://www.worldometers.info/" target="blank"
-                    >Worldometer</a
-                >.
+                <a href="https://www.worldometers.info/" target="blank">Worldometer</a>.
             </h4>
         </div>
     </div>
@@ -226,22 +243,16 @@
             <h3>Redes sociales:</h3>
             <ul class="listaRedes">
                 <li>
-                    <a
-                        href="https://www.linkedin.com/in/juanmanuelfernandezvelarde/"
-                        target="blank"
-                    >
-                        LinkedIn</a
-                    >
+                    <a href="https://www.linkedin.com/in/juanmanuelfernandezvelarde/" target="blank">
+                        LinkedIn</a>
                 </li>
                 <li>
                     <a href="https://www.instagram.com/juanmaferv96" target="blank">
-                        Instagram</a
-                    >
+                        Instagram</a>
                 </li>
                 <li>
                     <a href="https://www.twitter.com/juanmaferv96" target="blank">
-                        Twitter</a
-                    >
+                        Twitter</a>
                 </li>
             </ul>
         </div>

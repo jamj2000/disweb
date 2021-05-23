@@ -9,7 +9,7 @@ const CACHE_NAME = 'infocovid-v1';
 const CACHE_ASSETS = [
   '/',
   '/index.html',
-  '/offline.html',
+  '/offline2.html',
   '/favicon.png',
   '/global.css',
   '/build/bundle.css',
@@ -80,7 +80,7 @@ self.addEventListener('fetch', function (e) {
       .catch(() => {
         return caches.open(CACHE_NAME)
           .then((cache) => {
-            return cache.match('/offline.html');
+            return cache.match('/offline2.html');
           });
       })
   );
