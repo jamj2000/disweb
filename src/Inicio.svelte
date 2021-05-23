@@ -121,6 +121,7 @@
 
 <style>
     :global(body) {
+        
         background-image: url("/images/icons/covid.jpg");
     }
 
