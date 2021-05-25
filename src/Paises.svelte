@@ -8,16 +8,37 @@
 
     //VARIABLES WORLDOMETER
 
+    //VARIABLES WORLDOMETER Paises
+
+    //DATOS DEL PAIS
     let nombrePaisWorldometerLC;
     let nombrePaisWorldometer;
+    let latitudPaisWorldometer;
+    let longitudPaisWorldometer;
+    let paisContinente;
+
+    //GENERAL / TOTAL
     let casosPaisWorldometer;
     let muertesPaisWorldometer;
+    let recuperadosPaisWorldometer;
+    let testRealizadosWorldometer;
+    let poblacionWorldometer;
+    //HOY
+
     let muertesPaisHoyWorldometer;
     let casosPaisHoyWorldometer;
+    let recuperadosPaisHoyWorldometer;
     let casosActivosPaisWorldometer;
+    let casosCriticosWorldometer;
+
+    //TASAS
+    let casosPorMillonWorldometer;
     let muertesPorMillonWorldometer;
-    let poblacionWorldometer;
-    let continenteWorldometer;
+    let casosActivosPorMillonWorldometer;
+    let testPorMillonWorldometer;
+    let recuperadosPorMillonWorldometer;
+    let criticosPorMillonWorldometer;
+    
 
     let estado = "oculto";
 
@@ -47,16 +68,41 @@
             .then((pais) => {
                 nombrePaisWorldometerLC = pais.country.toLowerCase;
                 if (value.toLowerCase == nombrePaisWorldometerLC) {
+                    
+                    //DATOS DEL PAIS
                     nombrePaisWorldometer = pais.country;
-                    casosPaisWorldometer = pais.cases;
-                    muertesPaisWorldometer = pais.deaths;
+                    latitudPaisWorldometer = pais.countryInfo.lat;
+                    longitudPaisWorldometer =
+                        pais.countryInfo.long;
+                        paisContinente = pais.continent;
+
+                    //HOY
+
                     muertesPaisHoyWorldometer = pais.todayDeaths;
                     casosPaisHoyWorldometer = pais.todayCases;
+                    recuperadosPaisHoyWorldometer =
+                        pais.todayRecovered;
                     casosActivosPaisWorldometer = pais.active;
-                    muertesPorMillonWorldometer = pais.deathsPerOneMillion;
+                    casosCriticosWorldometer = pais.critical;
+
+                    //GENERAL / TOTAL
+                    casosPaisWorldometer = pais.cases;
+                    muertesPaisWorldometer = pais.deaths;
+                    recuperadosPaisWorldometer = pais.recovered;
+                    testRealizadosWorldometer = pais.tests;
                     poblacionWorldometer = pais.population;
-                    continenteWorldometer = pais.continent;
-                    estado = "visible";
+
+                    //TASAS
+                    casosPorMillonWorldometer = pais.casesPerOneMillion;
+                    muertesPorMillonWorldometer =
+                        pais.deathsPerOneMillion;
+                    casosActivosPorMillonWorldometer =
+                        pais.activePerOneMillion;
+                    testPorMillonWorldometer = pais.testsPerOneMillion;
+                    recuperadosPorMillonWorldometer =
+                        pais.recoveredPerOneMillion;
+                    criticosPorMillonWorldometer =
+                        pais.criticalPerOneMillion;
                 }
             });
         
@@ -64,7 +110,7 @@
  
         /* GRAFICA    */
 
-        fetch(`https://disease.sh/v3/covid-19/historical/${value}?lastdays=30`)
+        /* fetch(`https://disease.sh/v3/covid-19/historical/${value}?lastdays=30`)
             .then((response) => response.json())
             .then((casosPais) => {
                 console.log("PAIS: " + casosPais.country);
@@ -103,7 +149,7 @@
 
                 }
 
-            });
+            }); */
 
     }
 
@@ -120,88 +166,173 @@
 
 
     <!-- Div principal del muestreo de datos de la pagina -->
-    <div class={estado} id="datosPais">
-        <h6 class="centrado">Según Woldometer</h6>
-        <h1>{nombrePaisWorldometer} ({continenteWorldometer})</h1>
-        <h4 class="centrado">{poblacionWorldometer} habitantes</h4>
-        <h3>
-            Casos totales: <span class="resaltarDato"
-                >{casosPaisWorldometer}</span
-            >
-            - Muertos:
-            <span class="resaltarDato">{muertesPaisWorldometer}</span>
-        </h3>
 
-        <h3>
-            Casos positivos hoy: <span class="resaltarDato"
-                >{casosPaisHoyWorldometer}</span
-            >
-            <br />
-            Muertes hoy:
-            <span class="resaltarDato">{muertesPaisHoyWorldometer}</span>
-        </h3>
-        <h3>
-            Casos positivos actualmente <span class="resaltarDato"
-                >{casosActivosPaisWorldometer}</span
-            >
-        </h3>
-        <h3>
-            Casos positivos totales: <span class="resaltarDato"
-                >{casosPaisWorldometer}</span
-            >
-            <br />
-            Muertes totales:
-            <span class="resaltarDato">{muertesPaisWorldometer}</span>
-        </h3>
 
-        <h3>
-            Incidencia total de <span class="resaltarDato"
-                >{muertesPorMillonWorldometer}</span
-            > por millon de habitantes
-        </h3>
-        
 
-            <!-- <h3> GRAFICA DE CASOS</h3>
-            <canvas id="grafica" width="400" height="400" /> -->
-  
-        <!-- <canvas id="grafica" width="400" height="400" /> --> 
+    <div id="datosPais">
+    <h6 class="centrado">Según Woldometer</h6>
+    <h1 class="nombrePais">{nombrePaisWorldometer} ({paisContinente})</h1>
+    <h5 class="centrado">
+        Lat: {latitudPaisWorldometer} - Long: {longitudPaisWorldometer}
+    </h5>
+
+    <div class="contenedor">
+        <div class="general divDatos">
+            <h3 class="subtitulo">DATOS TOTALES</h3>
+            <div class="datos">
+                <p>
+                    Poblacion: <span class="cifra">
+                        {poblacionWorldometer}</span
+                    >
+                </p>
+                <p>
+                    Casos: <span class="cifra">
+                        {casosPaisWorldometer}
+                    </span>
+                </p>
+                <p>
+                    Tests: <span class="cifra">
+                        {testRealizadosWorldometer}</span
+                    >
+                </p>
+                <p>
+                    Muertes: <span class="cifra">
+                        {muertesPaisWorldometer}</span
+                    >
+                </p>
+                <p>
+                    Recuperaciones: <span class="cifra"
+                        >{recuperadosPaisWorldometer}
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="hoy divDatos">
+            <h3 class="subtitulo">DATOS HOY</h3>
+            <div class="datos">
+                <p>
+                    Casos: <span class="cifra">
+                        {casosPaisHoyWorldometer}
+                    </span>
+                </p>
+                <p>
+                    Activos: <span class="cifra">
+                        {casosActivosPaisWorldometer}</span
+                    >
+                </p>
+                <p>
+                    Criticos: <span class="cifra">
+                        {casosCriticosWorldometer}</span
+                    >
+                </p>
+                <p>
+                    Muertes: <span class="cifra">
+                        {muertesPaisHoyWorldometer}</span
+                    >
+                </p>
+                <p>
+                    Recuperaciones: <span class="cifra"
+                        >{recuperadosPaisHoyWorldometer}
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="tasas divDatos">
+            <h3 class="subtitulo">TASAS (x millon/habs)</h3>
+            <div class="datos">
+                <p>
+                    Tests: <span class="cifra">
+                        {testPorMillonWorldometer}
+                    </span>
+                </p>
+                <p>
+                    Casos : <span class="cifra">
+                        {casosPorMillonWorldometer}
+                    </span>
+                </p>
+                <p>
+                    Activos: <span class="cifra">
+                        {casosActivosPorMillonWorldometer}</span
+                    >
+                </p>
+                <p>
+                    Criticos: <span class="cifra">
+                        {casosActivosPorMillonWorldometer}</span
+                    >
+                </p>
+                <p>
+                    Muertes: <span class="cifra">
+                        {muertesPorMillonWorldometer}</span
+                    >
+                </p>
+                <p>
+                    Recuperaciones: <span class="cifra"
+                        >{recuperadosPorMillonWorldometer}
+                    </span>
+                </p>
+            </div>
+        </div>
     </div>
-
+</div>
 
 <style>
-    *{
+    * {
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+    .selectPais {
+        margin-top: 30px;
+        width: 50%;
+    }
+    .contenedor {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+    
+    .divDatos {
+        text-align: center;
+        height: 300px;
+        width: 30%;
+        border-radius: 1em;
+        background-color: rgba(0, 0, 0, 0.761);
+    }
+
+    .divDatos:hover {
+        transition: transform 0.2s linear;
+        transform: scale(1.2);
+
         
     }
-    .selectPais{
-        box-shadow:0px 0px 20px 2px rgb(245 245 245 / 78%);
-        margin-top: 20px;
-        width: 50%;
-        background-color: rgba(245, 245, 245, 0.782);
-        border: 1px solid rgba(245, 245, 245, 0.782);
+    .divDatos:hover .subtitulo{
+        color: #70416d;
+
+        
     }
-    .oculto {
-        display: none;
+    .subtitulo {
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+        color: #a6d6d6;
     }
-    .visible {
-        display: block;
+    .datos p {
+        color: whitesmoke;
+        font-weight: bold;
     }
-    .resaltarDato {
-        color: red;
+    .cifra {
+        font-weight: normal;
     }
 
     #datosPais {
-        box-shadow:0px 0px 20px 2px rgb(245 245 245 / 78%);
-        /* border: 3px outset #70416d; */
         margin-left: auto;
         margin-right: auto;
-        margin-top: 50px;
-        width: 75%;
+        margin-top: 20px;
+        width: 90%;
         text-align: left;
-        background-color: rgb(245 245 245 / 78%);
-        /* border-radius: 10%; */
+        background-color: rgba(245, 245, 245, 0.604);
         border-radius: 1em;
         padding: 1%;
+        padding-bottom: 5%;
     }
     #datosPais h1 {
         color: black;
@@ -217,26 +348,18 @@
     }
 
     @media (max-width: 1024px) {
-        .oculto {
-            display: none;
+        .divDatos {
+            height: 200px;
         }
-        .visible {
-            display: block;
-        }
-        .resaltarDato {
-            /* color: red; */
-            color: #871a03;
-        }
-
         #datosPais {
             margin-left: auto;
             margin-right: auto;
             width: 95%;
             text-align: left;
-            background-color: #a9cce3;
-            /* border-radius: 10%; */
+            background-color: rgba(245, 245, 245, 0.604);
             border-radius: 1em;
             padding: 1%;
+            padding-bottom: 5%;
             font-size: 10px;
         }
         #datosPais h1 {
@@ -246,7 +369,7 @@
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
                 sans-serif;
             text-align: center;
-            font-size: 25px;
+            font-size: 35px;
             line-height: 5px;
         }
         .centrado {
@@ -255,26 +378,39 @@
     }
 
     @media (max-width: 765px) {
-        .oculto {
-            display: none;
+        .divDatos {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            height: 250px;
+            width: 80%;
         }
-        .visible {
-            display: block;
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
         }
-        .resaltarDato {
-            /* color: red; */
-            color: #871a03;
+        .subtitulo {
+            font-size: 20px;
         }
-
+        .datos p {
+            color: whitesmoke;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .cifra {
+            font-weight: normal;
+        }
         #datosPais {
             margin-left: auto;
             margin-right: auto;
             width: 95%;
             text-align: left;
-            background-color: #a9cce3;
-            /* border-radius: 10%; */
+            background-color: rgba(245, 245, 245, 0.604);
             border-radius: 1em;
             padding: 1%;
+            padding-bottom: 5%;
         }
         #datosPais {
             font-size: 8px;
@@ -286,7 +422,7 @@
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
                 sans-serif;
             text-align: center;
-            font-size: 15px;
+            font-size: 30px;
             line-height: 5px;
         }
         .centrado {
