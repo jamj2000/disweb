@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+    import { onMount } from "svelte";
 
     let value = "";
 
@@ -11,6 +11,7 @@
     //VARIABLES WORLDOMETER Paises
 
     //DATOS DEL PAIS
+    let banderaPais;
     let nombrePaisWorldometerLC;
     let nombrePaisWorldometer;
     let latitudPaisWorldometer;
@@ -38,20 +39,19 @@
     let testPorMillonWorldometer;
     let recuperadosPorMillonWorldometer;
     let criticosPorMillonWorldometer;
-    
 
     let estado = "oculto";
 
     // Obtenemos lista de paises
     let listaPaises = [];
-    onMount( () => {
-        fetch(urlTodosLosPaises).
-          then ( res => res.json()).
-          then ( data => { 
-              listaPaises = data.map( x => x.country);
-              value = listaPaises[0];
-              onChange();             
-          });
+    onMount(() => {
+        fetch(urlTodosLosPaises)
+            .then((res) => res.json())
+            .then((data) => {
+                listaPaises = data.map((x) => x.country);
+                value = listaPaises[0];
+                onChange();
+            });
     });
 
     let nombrePais;
@@ -62,26 +62,24 @@
 
     let myChart = new Chart();
 
-    function onChange(){
+    function onChange() {
         fetch(`https://disease.sh/v3/covid-19/countries/${value}`)
             .then((response) => response.json())
             .then((pais) => {
                 nombrePaisWorldometerLC = pais.country.toLowerCase;
                 if (value.toLowerCase == nombrePaisWorldometerLC) {
-                    
                     //DATOS DEL PAIS
+                    banderaPais = pais.countryInfo.flag;
                     nombrePaisWorldometer = pais.country;
                     latitudPaisWorldometer = pais.countryInfo.lat;
-                    longitudPaisWorldometer =
-                        pais.countryInfo.long;
-                        paisContinente = pais.continent;
+                    longitudPaisWorldometer = pais.countryInfo.long;
+                    paisContinente = pais.continent;
 
                     //HOY
 
                     muertesPaisHoyWorldometer = pais.todayDeaths;
                     casosPaisHoyWorldometer = pais.todayCases;
-                    recuperadosPaisHoyWorldometer =
-                        pais.todayRecovered;
+                    recuperadosPaisHoyWorldometer = pais.todayRecovered;
                     casosActivosPaisWorldometer = pais.active;
                     casosCriticosWorldometer = pais.critical;
 
@@ -94,20 +92,15 @@
 
                     //TASAS
                     casosPorMillonWorldometer = pais.casesPerOneMillion;
-                    muertesPorMillonWorldometer =
-                        pais.deathsPerOneMillion;
-                    casosActivosPorMillonWorldometer =
-                        pais.activePerOneMillion;
+                    muertesPorMillonWorldometer = pais.deathsPerOneMillion;
+                    casosActivosPorMillonWorldometer = pais.activePerOneMillion;
                     testPorMillonWorldometer = pais.testsPerOneMillion;
                     recuperadosPorMillonWorldometer =
                         pais.recoveredPerOneMillion;
-                    criticosPorMillonWorldometer =
-                        pais.criticalPerOneMillion;
+                    criticosPorMillonWorldometer = pais.criticalPerOneMillion;
                 }
             });
-        
-    
- 
+
         /* GRAFICA    */
 
         /* fetch(`https://disease.sh/v3/covid-19/historical/${value}?lastdays=30`)
@@ -150,28 +143,25 @@
                 }
 
             }); */
-
     }
-
-
-
 </script>
 
-
 <select bind:value on:change={onChange} class="selectPais">
-	{#each listaPaises as pais}
-		<option value={pais}>{pais}</option> 
-	{/each}
+    {#each listaPaises as pais}
+        <option value={pais}>{pais}</option>
+    {/each}
 </select>
 
+<!-- Div principal del muestreo de datos de la pagina -->
 
-    <!-- Div principal del muestreo de datos de la pagina -->
-
-
-
-    <div id="datosPais">
+<div id="datosPais">
     <h6 class="centrado">Según Woldometer</h6>
-    <h1 class="nombrePais">{nombrePaisWorldometer} ({paisContinente})</h1>
+    <div class="divBandera" style="background-image: url({banderaPais});">
+        <span class="nombrePais">
+            {nombrePaisWorldometer}
+        </span>
+    </div>
+
     <h5 class="centrado">
         Lat: {latitudPaisWorldometer} - Long: {longitudPaisWorldometer}
     </h5>
@@ -290,25 +280,35 @@
         justify-content: space-evenly;
         align-items: flex-start;
     }
-    
+    .nombrePais {
+        text-transform: uppercase;
+
+        font-style: italic;
+        height: 100px;
+        font-size: 30px;
+        padding: 10px;
+        background-color: rgba(245, 245, 245, 0.604);
+        border-radius: 1em;
+        position: relative;
+        top: 70px;
+    }
+
     .divDatos {
         text-align: center;
         height: 300px;
         width: 30%;
         border-radius: 1em;
         background-color: rgba(0, 0, 0, 0.761);
+        box-shadow: 0px 1px 10px #a6d6d6;
     }
 
     .divDatos:hover {
         transition: transform 0.2s linear;
         transform: scale(1.2);
-
-        
+        box-shadow: 0px 1px 10px #70416d;
     }
-    .divDatos:hover .subtitulo{
+    .divDatos:hover .subtitulo {
         color: #70416d;
-
-        
     }
     .subtitulo {
         padding-bottom: 5px;
@@ -334,15 +334,16 @@
         padding: 1%;
         padding-bottom: 5%;
     }
-    #datosPais h1 {
-        color: black;
-        text-transform: uppercase;
-        font-style: italic;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    .divBandera {
+        border-radius: 1em;
+        box-shadow: 0px 1px 10px grey;
         text-align: center;
-        font-size: 50px;
-        line-height: 5px;
+        background-position: center;
+        background-size: auto;
+        background-repeat: no-repeat;
+        height: 180px;
     }
+
     .centrado {
         text-align: center;
     }
@@ -374,6 +375,24 @@
         }
         .centrado {
             text-align: center;
+        }
+        .nombrePais {
+            text-transform: uppercase;
+            font-style: italic;
+            height: 100px;
+            font-size: 20px;
+            padding: 10px;
+            background-color: rgba(245, 245, 245, 0.604);
+            border-radius: 1em;
+            position: relative;
+            top: 50px;
+        }
+        .divBandera {
+            text-align: center;
+            background-position: center;
+            background-size: auto;
+            background-repeat: no-repeat;
+            height: 130px;
         }
     }
 
@@ -427,6 +446,25 @@
         }
         .centrado {
             text-align: center;
+        }
+
+        .nombrePais {
+            text-transform: uppercase;
+            font-style: italic;
+            height: 100px;
+            font-size: 15px;
+            padding: 10px;
+            background-color: rgba(245, 245, 245, 0.604);
+            border-radius: 1em;
+            position: relative;
+            top: 45px;
+        }
+        .divBandera {
+            text-align: center;
+            background-position: center;
+            background-size: auto;
+            background-repeat: no-repeat;
+            height: 110px;
         }
     }
 </style>

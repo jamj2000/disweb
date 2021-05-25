@@ -102,7 +102,13 @@
 <!-- Div principal del muestreo de datos de la pagina -->
 <div id="datosContinente">
     <h6 class="centrado">Según Woldometer</h6>
-    <h1 class="nombrePais">{nombreContinenteWorldometer}</h1>
+
+
+    <div class="divBandera">
+        <span class="nombrePais">
+            {nombreContinenteWorldometer}
+        </span>
+    </div>
     <h5 class="centrado">
         Lat: {latitudContinenteWorldometer} - Long: {longitudContinenteWorldometer}
     </h5>
@@ -220,6 +226,27 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: flex-start;
+        
+    }
+    .divBandera {
+        border-radius: 1em;
+        box-shadow: 0px 1px 10px grey;
+        text-align: center;
+        background-position: center;
+        background-size: auto;
+        background-repeat: no-repeat;
+        height: 180px;
+    }
+    .nombrePais {
+        text-transform: uppercase;
+        font-style: italic;
+        height: 100px;
+        font-size: 50px;
+        padding: 10px;
+        background-color: rgba(245, 245, 245, 0.604);
+        border-radius: 1em;
+        position: relative;
+        top: 60px;
     }
     
     .divDatos {
@@ -228,18 +255,16 @@
         width: 30%;
         border-radius: 1em;
         background-color: rgba(0, 0, 0, 0.761);
+        box-shadow: 0px 1px 10px #a6d6d6;
     }
 
     .divDatos:hover {
         transition: transform 0.2s linear;
         transform: scale(1.2);
-
-        
+        box-shadow: 0px 1px 10px #70416d;
     }
-    .divDatos:hover .subtitulo{
+    .divDatos:hover .subtitulo {
         color: #70416d;
-
-        
     }
     .subtitulo {
         padding-bottom: 5px;
