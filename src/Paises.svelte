@@ -112,7 +112,7 @@
 </script>
 
 
-<select bind:value on:change={onChange}>
+<select bind:value on:change={onChange} class="selectPais">
 	{#each listaPaises as pais}
 		<option value={pais}>{pais}</option> 
 	{/each}
@@ -161,14 +161,25 @@
         </h3>
         
 
-            <h3> GRAFICA DE CASOS</h3>
-            <canvas id="grafica" width="400" height="400" />
+            <!-- <h3> GRAFICA DE CASOS</h3>
+            <canvas id="grafica" width="400" height="400" /> -->
   
         <!-- <canvas id="grafica" width="400" height="400" /> --> 
     </div>
 
 
 <style>
+    *{
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        
+    }
+    .selectPais{
+        box-shadow:0px 0px 20px 2px rgb(245 245 245 / 78%);
+        margin-top: 20px;
+        width: 50%;
+        background-color: rgba(245, 245, 245, 0.782);
+        border: 1px solid rgba(245, 245, 245, 0.782);
+    }
     .oculto {
         display: none;
     }
@@ -180,11 +191,14 @@
     }
 
     #datosPais {
+        box-shadow:0px 0px 20px 2px rgb(245 245 245 / 78%);
+        /* border: 3px outset #70416d; */
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
+        margin-top: 50px;
+        width: 75%;
         text-align: left;
-        background-color: #a9cce3;
+        background-color: rgb(245 245 245 / 78%);
         /* border-radius: 10%; */
         border-radius: 1em;
         padding: 1%;
@@ -217,7 +231,7 @@
         #datosPais {
             margin-left: auto;
             margin-right: auto;
-            width: 100%;
+            width: 95%;
             text-align: left;
             background-color: #a9cce3;
             /* border-radius: 10%; */
@@ -255,7 +269,7 @@
         #datosPais {
             margin-left: auto;
             margin-right: auto;
-            width: 100%;
+            width: 95%;
             text-align: left;
             background-color: #a9cce3;
             /* border-radius: 10%; */
