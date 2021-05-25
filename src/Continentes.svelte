@@ -102,7 +102,7 @@
 <!-- Div principal del muestreo de datos de la pagina -->
 <div id="datosContinente">
     <h6 class="centrado">Según Woldometer</h6>
-    <h1>{nombreContinenteWorldometer}</h1>
+    <h1 class="nombrePais">{nombreContinenteWorldometer}</h1>
     <h5 class="centrado">
         Lat: {latitudContinenteWorldometer} - Long: {longitudContinenteWorldometer}
     </h5>
@@ -221,6 +221,7 @@
         justify-content: space-evenly;
         align-items: flex-start;
     }
+    
     .divDatos {
         text-align: center;
         height: 300px;
@@ -232,6 +233,13 @@
     .divDatos:hover {
         transition: transform 0.2s linear;
         transform: scale(1.2);
+
+        
+    }
+    .divDatos:hover .subtitulo{
+        color: #70416d;
+
+        
     }
     .subtitulo {
         padding-bottom: 5px;
@@ -292,7 +300,7 @@
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
                 sans-serif;
             text-align: center;
-            font-size: 25px;
+            font-size: 35px;
             line-height: 5px;
         }
         .centrado {
@@ -302,7 +310,7 @@
 
     @media (max-width: 765px) {
         .divDatos {
-            margin-top: 10px;
+            margin-top: 20px;
             margin-bottom: 10px;
             height: 250px;
             width: 80%;
@@ -345,7 +353,7 @@
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
                 sans-serif;
             text-align: center;
-            font-size: 20px;
+            font-size: 30px;
             line-height: 5px;
         }
         .centrado {
