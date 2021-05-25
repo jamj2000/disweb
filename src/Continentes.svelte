@@ -384,5 +384,25 @@
         .centrado {
             text-align: center;
         }
+        .divBandera {
+        border-radius: 1em;
+        box-shadow: 0px 1px 10px grey;
+        text-align: center;
+        background-position: center;
+        background-size: auto;
+        background-repeat: no-repeat;
+        height: 150px;
+    }
+    .nombrePais {
+        text-transform: uppercase;
+        font-style: italic;
+        height: 100px;
+        font-size: 30px;
+        padding: 10px;
+        background-color: rgba(245, 245, 245, 0.604);
+        border-radius: 1em;
+        position: relative;
+        top: 60px;
+    }
     }
 </style>
