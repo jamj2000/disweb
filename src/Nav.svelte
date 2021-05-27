@@ -62,10 +62,24 @@
             font-size: smaller;
         }
         .menu span:hover {
-        color: #70416d;
-        /* font-size: larger; */
-        transition: transform 0.2s linear;
-        transform: scale(1.2);
-    }
+            color: #70416d;
+            /* font-size: larger; */
+            transition: transform 0.2s linear;
+            transform: scale(1.2);
+        }
+        @media (max-width: 300px) {
+            .menu {
+                padding: 10px;
+            }
+            .menu span {
+                font-size: 10px;
+            }
+            .menu span:hover {
+                color: #70416d;
+                /* font-size: larger; */
+                transition: transform 0.2s linear;
+                transform: scale(1.2);
+            }
+        }
     }
 </style>
