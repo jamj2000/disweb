@@ -51,7 +51,7 @@
     }
 
     .menu span:hover {
-        color: #70416d;
+        color: #BC1333;
         /* font-size: larger; */
         transition: transform 0.2s linear;
         transform: scale(1.5);
@@ -62,7 +62,7 @@
             font-size: smaller;
         }
         .menu span:hover {
-            color: #70416d;
+            color: #BC1333;
             /* font-size: larger; */
             transition: transform 0.2s linear;
             transform: scale(1.2);
@@ -75,7 +75,7 @@
                 font-size: 10px;
             }
             .menu span:hover {
-                color: #70416d;
+                color: #BC1333;
                 /* font-size: larger; */
                 transition: transform 0.2s linear;
                 transform: scale(1.2);

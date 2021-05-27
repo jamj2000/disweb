@@ -305,10 +305,10 @@
     .divDatos:hover {
         transition: transform 0.2s linear;
         transform: scale(1.2);
-        box-shadow: 0px 1px 10px #70416d;
+        box-shadow: 0px 1px 10px #BC1333;
     }
     .divDatos:hover .subtitulo {
-        color: #70416d;
+        color: #BC1333;
     }
     .subtitulo {
         padding-bottom: 5px;

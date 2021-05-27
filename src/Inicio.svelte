@@ -9,8 +9,8 @@
         <div class="contenidoPaises divIndividual">
             <h2 class="subtituloDiv">Informacion relacionada con los países</h2>
             <p class="parrafoDiv">
-                En la <span class="mayusculas "> sección </span>  <span class="mayusculas negrita">Países </span> veremos información detallada sobre los
-                casos de <span class="mayusculas negrita cursiva">Covid-19</span> en tiempo real. 
+                En la <span class="mayusculas "> sección </span>  <span class="mayusculas negrita">Países </span> veremos información detallada sobre 
+                la situacion de cada país con respecto al <span class="mayusculas negrita cursiva">Covid-19</span> en tiempo real. 
                 <br /><br />
                  
                 Datos como los casos, las muertes y los recuperados que ha tenido cada país desde que comenzó la pandemia así como los tests realizados, e incluso
@@ -29,8 +29,8 @@
         <div class="contenidoContinentes divIndividual">
             <h2 class="subtituloDiv">Informacion relacionada con los continentes</h2>
             <p class="parrafoDiv">
-                En la <span class="mayusculas "> sección </span>  <span class="mayusculas negrita">continentes </span> veremos información detallada sobre los
-                casos de <span class="mayusculas negrita cursiva">Covid-19</span> en tiempo real. 
+                En la <span class="mayusculas "> sección </span>  <span class="mayusculas negrita">continentes </span> veremos información detallada sobre 
+                la situacion de cada continente con respecto al <span class="mayusculas negrita cursiva">Covid-19</span> en tiempo real. 
                 <br /><br />
                  
                 Aquí podremos ver los casos, las muertes y los recuperados que ha tenido cada continente desde que comenzó la pandemia así como los tests realizados, e incluso
@@ -50,7 +50,7 @@
             <h2 class="subtituloDiv">Datos historicos sobre el Covid</h2>
             <p class="parrafoDiv">
                 En la <span class="mayusculas "> sección </span>  <span class="mayusculas negrita">histórico </span> veremos graficas con los datos de los ultimos
-                30 días sobre el covid en cada país. <br />
+                30 días sobre el covid en cada país. <br /> <br>
                 En estas graficas veremos los datos sobre los casos, muertes y recuperaciones.
             </p>
         </div>

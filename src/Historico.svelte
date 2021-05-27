@@ -24,6 +24,8 @@
     let dataCasos = [];
     let labelsMuertes = [];
     let dataMuertes = [];
+    let labelsRecuperados = [];
+    let dataRecuperados = [];
 
     let graficaCasos = new Chart();
     let graficaMuertes = new Chart();
@@ -97,7 +99,7 @@
 
                     //FIN PRIMERA GRAFICA
 
-                    //PRIMERA GRAFICA - MUERTES
+                    //SEGUNDA GRAFICA - MUERTES
 
                     labelsMuertes = Object.keys(pais.timeline.deaths);
                     dataMuertes = Object.values(pais.timeline.deaths);
@@ -131,10 +133,84 @@
                         options: {
                             responsive: true,
                             maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [
+                                    {
+                                        stacked: true,
+                                        gridLines: {
+                                            display: true,
+                                            color: "rgba(255,99,132,0.2)",
+                                        },
+                                    },
+                                ],
+                                xAxes: [
+                                    {
+                                        gridLines: {
+                                            display: false,
+                                        },
+                                    },
+                                ],
+                            },
                         },
                     });
 
-                    //FIN PRIMERA GRAFICA
+                    //FIN SEGUNDA GRAFICA
+
+
+                    //TERCERA GRAFICA - RECUPERADOS
+
+                    labelsRecuperados = Object.keys(pais.timeline.recovered);
+                    dataRecuperados = Object.values(pais.timeline.recovered);
+                    labelsRecuperados = labelsRecuperados
+                        .map((x) => x.split("/"))
+                        .map((x) => x[1] + "/" + x[0] + "/" + x[2]);
+
+                    // INICIO GRAFICA
+
+                    let ctxRecuperados = document
+                        .getElementById("graficaRecuperados")
+                        .getContext("2d");
+                    graficaRecuperados.destroy();
+                    graficaRecuperados = new Chart(ctxRecuperados, {
+                        type: "line",
+                        data: {
+                            labels: labelsRecuperados,
+                            datasets: [
+                                {
+                                    label: "Recuperados",
+                                    borderColor: "#c6ebc9",
+                                    hoverBorderColor: "#907fa4",
+                                    pointColor: "#70af85",
+                                    pointStrokeColor: "#c1c7d1",
+                                    pointHighlightFill: "#fff",
+                                    pointHighlightStroke: "rgba(220,220,220,1)",
+                                    data: dataRecuperados,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [
+                                    {
+                                        stacked: true,
+                                        gridLines: {
+                                            display: true,
+                                            color: "rgba(255,99,132,0.2)",
+                                        },
+                                    },
+                                ],
+                                xAxes: [
+                                    {
+                                        gridLines: {
+                                            display: false,
+                                        },
+                                    },
+                                ],
+                            },
+                        },
+                    });
                 }
             });
     }
@@ -153,25 +229,41 @@
     <div class="grafica">
         <canvas id="graficaMuertes" height="400" width="400" />
     </div>
+    <div class="grafica">
+        <canvas id="graficaRecuperados" height="400" width="400" />
+    </div>
 </div>
 
 <style>
+    .selectPais{
+        margin-top: 30px;
+        width: 50%;
+    }
     .contenedor {
+        margin-top: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: rgba(245, 245, 245, 0.604);
+        background-color: rgba(0, 0, 0, 0.528);
         width: 90%;
         margin-left: auto;
         margin-right: auto;
         border-radius: 1em;
         padding: 10px;
+        padding-bottom: 20px;
+        
     }
     .grafica {
         padding: 5px 15px 5px 15px;
-        background-color: rgba(245, 245, 245, 0.604);
+        background-color: rgba(245, 245, 245, 0.802);
         width: 90%;
         max-height: 600px;
         margin: 10px;
+        border-radius: 1em;
+    }
+    .grafica:hover {
+        transition: transform 0.2s linear;
+        transform: scale(1.1);
+        box-shadow: 0px 1px 10px #BC1333;
     }
 </style>
