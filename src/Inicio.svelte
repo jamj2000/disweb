@@ -49,7 +49,7 @@
         <div class="contenidoHistorico divIndividual">
             <h2 class="subtituloDiv">Datos historicos sobre el Covid</h2>
             <p class="parrafoDiv">
-                En este apartado veremos graficas con los datos de los ultimos
+                En la <span class="mayusculas "> sección </span>  <span class="mayusculas negrita">histórico </span> veremos graficas con los datos de los ultimos
                 30 días sobre el covid en cada país. <br />
                 En estas graficas veremos los datos sobre los casos, muertes y recuperaciones.
             </p>
@@ -302,6 +302,6 @@
         h1{
             height: 150px;
         }
-        
+
         }
 </style>
