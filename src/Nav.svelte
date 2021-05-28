@@ -53,10 +53,10 @@
     .menu span:hover {
         color: #BC1333;
         transition: transform 0.2s linear;
-        transform: scale(1.5);
+        transform: scale(1.4);
     }
     
-        @media (max-width: 320px) { /* 320 */
+        @media (max-width: 412px) { /* 320 */
             .menu {
                 padding: 10px;
             }
@@ -66,7 +66,7 @@
             .menu span:hover {
                 color: #BC1333;
                 transition: transform 0.2s linear;
-                transform: scale(1.3);
+                transform: scale(1.2);
             }
         }
     
