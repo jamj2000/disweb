@@ -61,12 +61,12 @@
                 padding: 10px;
             }
             .menu span {
-                font-size: 10px;
+                font-size: 12px;
             }
             .menu span:hover {
                 color: #BC1333;
                 transition: transform 0.2s linear;
-                transform: scale(1.2);
+                transform: scale(1.3);
             }
         }
     
