@@ -29,4 +29,6 @@ Para desplegar la app deberás seguir los siguientes pasos:
 Ahora podrás dirigirte a la url que aparece en la consola para usar la aplicación, que suele ser _"http://localhost:5000"_
 
 
+![Imagen de la portada](/images/icons/covid.jpg)
+
 
