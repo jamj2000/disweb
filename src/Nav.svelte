@@ -57,8 +57,25 @@
         transition: transform 0.2s linear;
         transform: scale(1.5);
     }
+    @media (max-width: 700px) {
+        .menu span:hover {
+            color: rgb(0, 204, 255);
+            /* font-size: larger; */
+            transition: transform 0.2s linear;
+            transform: scale(1.1);
+        }
+    }
+    @media (max-width: 600px) {
+        .menu span:hover {
+            color: yellow;
+            /* font-size: larger; */
+            transition: transform 0.2s linear;
+            transform: scale(1.1);
+        }
+    }
+S
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {/* 400 */
         .menu span {
             font-size: smaller;
         }
@@ -68,7 +85,7 @@
             transition: transform 0.2s linear;
             transform: scale(1.1);
         }
-        @media (max-width: 320px) {
+        @media (max-width: 320px) { /* 320 */
             .menu {
                 padding: 10px;
             }
@@ -77,7 +94,7 @@
             }
             /* #BC1333 */
             .menu span:hover {
-                color: green;
+                color: purple;
                 /* font-size: larger; */
                 transition: transform 0.2s linear;
                 transform: scale(1.1);
