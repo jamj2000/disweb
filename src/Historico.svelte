@@ -4,6 +4,7 @@
     let value = "";
     var url = `https://disease.sh/v3/covid-19/countries/${value}`;
     var urlTodosLosPaises = `https://disease.sh/v3/covid-19/countries`;
+    var urlVacuna = `https://disease.sh/v3/covid-19/vaccine/coverage/countries/${value}?lastdays=30&fullData=false`;
 
     // Obtenemos lista de paises
     let listaPaises = [];
@@ -32,7 +33,7 @@
     let graficaRecuperados = new Chart();
 
     function onChange() {
-        fetch(`https://disease.sh/v3/covid-19/historical/${value}?lastdays=35`)
+        fetch(`https://disease.sh/v3/covid-19/historical/${value}?lastdays=30`)
             .then((response) => response.json())
             .then((pais) => {
                 console.log("PAIS: " + pais.country);

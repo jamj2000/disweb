@@ -52,6 +52,7 @@
 
     .menu span:hover {
         color: #BC1333;
+        
         /* font-size: larger; */
         transition: transform 0.2s linear;
         transform: scale(1.5);
@@ -67,7 +68,7 @@
             transition: transform 0.2s linear;
             transform: scale(1.2);
         }
-        @media (max-width: 300px) {
+        @media (max-width: 320px) {
             .menu {
                 padding: 10px;
             }
@@ -78,7 +79,7 @@
                 color: #BC1333;
                 /* font-size: larger; */
                 transition: transform 0.2s linear;
-                transform: scale(1.2);
+                transform: scale(1.1);
             }
         }
     }

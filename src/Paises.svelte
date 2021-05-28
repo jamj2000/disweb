@@ -101,48 +101,6 @@
                 }
             });
 
-        /* GRAFICA    */
-
-        /* fetch(`https://disease.sh/v3/covid-19/historical/${value}?lastdays=30`)
-            .then((response) => response.json())
-            .then((casosPais) => {
-                console.log("PAIS: " + casosPais.country);
-                casos = casosPais.timeline.cases;
-                nombrePais = casosPais.country.toLowerCase;
-                if (value.toLowerCase == nombrePais) {
-                    //console.log(casosPais.timeline.cases);
-
-                    labelsCasos = Object.keys(casosPais.timeline.cases);
-                    dataCasos = Object.values(casosPais.timeline.cases);
-                    labelsCasos = labelsCasos.map( x => x.split("/"))
-                                             .map( x => x[1]+"/"+x[0]+"/"+x[2]);
-               
-                    // INICIO GRAFICA 
-
-                    let ctx = document.getElementById("grafica").getContext('2d');
-                    myChart.destroy();
-                    myChart = new Chart(ctx, {
-                        type: "line",
-                        data: {
-                            labels: labelsCasos,
-                            datasets: [
-                                {
-                                    label: "Casos",
-                                    borderColor: "#F10808",
-                                    hoverBorderColor: "green",
-                                    pointColor: "rgba(210, 214, 222, 1)",
-                                    pointStrokeColor: "#c1c7d1",
-                                    pointHighlightFill: "#fff",
-                                    pointHighlightStroke: "rgba(220,220,220,1)",
-                                    data: dataCasos
-                                },
-                            ],
-                        },
-                    });
-
-                }
-
-            }); */
     }
 </script>
 
@@ -247,7 +205,7 @@
                 </p>
                 <p>
                     Criticos: <span class="cifra">
-                        {casosActivosPorMillonWorldometer}</span
+                        {casosPorMillonWorldometer}</span
                     >
                 </p>
                 <p>
