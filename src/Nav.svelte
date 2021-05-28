@@ -53,7 +53,7 @@
     .menu span:hover {
         color: #BC1333;
         transition: transform 0.2s linear;
-        transform: scale(1.2);
+        transform: scale(1.3);
     }
     
 
