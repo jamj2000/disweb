@@ -52,39 +52,22 @@
 
     .menu span:hover {
         color: #BC1333;
-        
-        /* font-size: larger; */
         transition: transform 0.2s linear;
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
-    @media (max-width: 700px) {
-        .menu span:hover {
-            color: rgb(0, 204, 255);
-            /* font-size: larger; */
-            transition: transform 0.2s linear;
-            transform: scale(1.1);
-        }
-    }
-    @media (max-width: 600px) {
-        .menu span:hover {
-            color: yellow;
-            /* font-size: larger; */
-            transition: transform 0.2s linear;
-            transform: scale(1.1);
-        }
-    }
-S
+    
 
     @media (max-width: 500px) {/* 400 */
         .menu span {
             font-size: smaller;
         }
         .menu span:hover {
-            color: blue;
+            color: #BC1333;
             /* font-size: larger; */
             transition: transform 0.2s linear;
             transform: scale(1.1);
         }
+    }
         @media (max-width: 320px) { /* 320 */
             .menu {
                 padding: 10px;
@@ -94,11 +77,11 @@ S
             }
             /* #BC1333 */
             .menu span:hover {
-                color: purple;
+                color: #BC1333;
                 /* font-size: larger; */
                 transition: transform 0.2s linear;
                 transform: scale(1.1);
             }
         }
-    }
+    
 </style>
