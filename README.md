@@ -1,105 +1,32 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
-
----
-
-# svelte app
-
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
 
 
-## Get started
+# PROYECTO DAW 2020-21 
 
-Install the dependencies...
+Aplicación frontend desarrollada con Svelte para la visualización de casos de COVID a nivel mundial por países y continentes.
 
-```bash
-cd svelte-app
-npm install
-```
+La aplicación está desplegada en Vercel. Puedes visitarla en: https://infocovid-plum.vercel.app/
 
-...then start [Rollup](https://rollupjs.org):
+## Información sobre la app
 
-```bash
-npm run dev
-```
+Esta aplicacion hace uso de la Información proporcionada por la web https://disease.sh/, que recoge la Información de fuentes como 
+la web https://www.worldometers.info/, la universidad Johns Hokins, the New York Times, Apple y algunos gobiernos. 
+Esta información es actualizada en la mayoría de los casos cada 10 minutos.
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
-
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
-
-## Building and running in production mode
-
-To create an optimised version of the app:
-
-```bash
-npm run build
-```
-
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+Además proporciona datos sobre el estado de la vacunación en todo el mundo a traves de la web https://www.raps.org/ cuyos datos 
+actualiza diariamente.
 
 
-## Single-page app mode
+## Despliegue de la app
 
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
+Para desplegar la app deberás seguir los siguientes pasos:
 
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
+- Dirígete a la carpeta donde quieras desplegarla.
+- Una vez dentro usa el comando _"git clone https://github.com/juanmaferv96/disweb"_
+- Para entrar a la carpeta del proyecto usa _"cd disweb"_
+- Una vez dentro habrá que instalar las dependencias de Svelte con _"npm install"_
+- Por ultimo, para lanzar la aplicacion usa el comando _"npm run dev"_
 
-```js
-"start": "sirv public --single"
-```
+Ahora podrás dirigirte a la url que aparece en la consola para usar la aplicación, que suele ser _"http://localhost:5000"_
 
-## Using TypeScript
 
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
 
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```

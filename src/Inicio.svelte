@@ -7,17 +7,17 @@
     <h2 class="subtitulo">¿Que veremos en esta web?</h2>
     <div class="queVeremos">
         <div class="contenidoPaises divIndividual">
-            <h2 class="subtituloDiv">Informacion relacionada con los países</h2>
+            <h2 class="subtituloDiv">Información relacionada con los países</h2>
             <p class="parrafoDiv">
                 En la <span class="mayusculas "> sección </span>  <span class="mayusculas negrita">Países </span> veremos información detallada sobre 
-                la situacion de cada país con respecto al <span class="mayusculas negrita cursiva">Covid-19</span> en tiempo real. 
+                la situación de cada país con respecto al <span class="mayusculas negrita cursiva">Covid-19</span> en tiempo real. 
                 <br /><br />
                  
                 Datos como los casos, las muertes y los recuperados que ha tenido cada país desde que comenzó la pandemia así como los tests realizados, e incluso
                 las cifras que se manejan cada día, que se actualizarán cada 10 minutos.
 
                 <br><br />
-                Además tendremos la información de las tasas por cada millon de habitantes de los tests realizados, los casos, el número de personas en estado grave,
+                Además tendremos la información de las tasas por cada millón de habitantes de los tests realizados, los casos, el número de personas en estado grave,
                 las muertes y los recuperados.
                
                 
@@ -27,17 +27,17 @@
         </div>
 
         <div class="contenidoContinentes divIndividual">
-            <h2 class="subtituloDiv">Informacion relacionada con los continentes</h2>
+            <h2 class="subtituloDiv">Información relacionada con los continentes</h2>
             <p class="parrafoDiv">
                 En la <span class="mayusculas "> sección </span>  <span class="mayusculas negrita">continentes </span> veremos información detallada sobre 
-                la situacion de cada continente con respecto al <span class="mayusculas negrita cursiva">Covid-19</span> en tiempo real. 
+                la situación de cada continente con respecto al <span class="mayusculas negrita cursiva">Covid-19</span> en tiempo real. 
                 <br /><br />
                  
                 Aquí podremos ver los casos, las muertes y los recuperados que ha tenido cada continente desde que comenzó la pandemia así como los tests realizados, e incluso
                 las cifras que se manejan cada día, que se actualizarán cada 10 minutos.
 
                 <br><br />
-                Además tendremos la información de las tasas por cada millon de habitantes de los tests realizados, los casos, el número de personas en estado grave,
+                Además tendremos la información de las tasas por cada millón de habitantes de los tests realizados, los casos, el número de personas en estado grave,
                 las muertes y los recuperados.
                
                 

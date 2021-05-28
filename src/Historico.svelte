@@ -214,6 +214,14 @@
                     });
                 }
             });
+
+            fetch(`https://disease.sh/v3/covid-19/vaccine/coverage/countries/${value}?lastdays=30&fullData=false`)
+            .then((response) => response.json())
+            .then((vacuna) => { 
+
+
+                
+            });
     }
 </script>
 
