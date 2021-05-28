@@ -63,10 +63,10 @@
             font-size: smaller;
         }
         .menu span:hover {
-            color: #BC1333;
+            color: blue;
             /* font-size: larger; */
             transition: transform 0.2s linear;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
         @media (max-width: 320px) {
             .menu {
@@ -75,8 +75,9 @@
             .menu span {
                 font-size: 10px;
             }
+            /* #BC1333 */
             .menu span:hover {
-                color: #BC1333;
+                color: green;
                 /* font-size: larger; */
                 transition: transform 0.2s linear;
                 transform: scale(1.1);
