@@ -298,8 +298,9 @@
             font-size: small;
         }
     }
-    @media (max-width: 400px) {
+    @media (max-width: 425px) {
         h1{
+            font-size: 30px;
             height: 150px;
         }
 
