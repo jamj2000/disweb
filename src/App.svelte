@@ -1,7 +1,5 @@
 <script>
 
-	export let name;
-
 	import { Router } from "svelte-routing";
 	import Nav from "./Nav.svelte";
 	import Contenido from "./Contenido.svelte";

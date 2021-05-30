@@ -3,7 +3,6 @@
 
     let value = "";
 
-    var url = `https://disease.sh/v3/covid-19/continents/${value}`;
     var urlTodosLosContinentes = `https://disease.sh/v3/covid-19/continents`;
 
     //VARIABLES WORLDOMETER Continentes
@@ -102,7 +101,6 @@
 <!-- Div principal del muestreo de datos de la pagina -->
 <div id="datosContinente">
     <h6 class="centrado">Según Woldometer</h6>
-
 
     <div class="divBandera">
         <span class="nombrePais">
@@ -226,7 +224,6 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: flex-start;
-        
     }
     .divBandera {
         border-radius: 1em;
@@ -248,7 +245,7 @@
         position: relative;
         top: 60px;
     }
-    
+
     .divDatos {
         text-align: center;
         height: 300px;
@@ -261,10 +258,10 @@
     .divDatos:hover {
         transition: transform 0.2s linear;
         transform: scale(1.2);
-        box-shadow: 0px 1px 10px #BC1333;
+        box-shadow: 0px 1px 10px #bc1333;
     }
     .divDatos:hover .subtitulo {
-        color: #BC1333;
+        color: #bc1333;
     }
     .subtitulo {
         padding-bottom: 5px;
@@ -308,25 +305,11 @@
             height: 200px;
         }
         #datosContinente {
-            margin-left: auto;
-            margin-right: auto;
             width: 95%;
-            text-align: left;
-            background-color: rgba(245, 245, 245, 0.604);
-            border-radius: 1em;
-            padding: 1%;
-            padding-bottom: 5%;
             font-size: 10px;
         }
         #datosContinente h1 {
-            color: black;
-            text-transform: uppercase;
-            font-style: italic;
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
-                sans-serif;
-            text-align: center;
             font-size: 35px;
-            line-height: 5px;
         }
         .centrado {
             text-align: center;
@@ -385,24 +368,24 @@
             text-align: center;
         }
         .divBandera {
-        border-radius: 1em;
-        box-shadow: 0px 1px 10px grey;
-        text-align: center;
-        background-position: center;
-        background-size: auto;
-        background-repeat: no-repeat;
-        height: 150px;
-    }
-    .nombrePais {
-        text-transform: uppercase;
-        font-style: italic;
-        height: 100px;
-        font-size: 30px;
-        padding: 10px;
-        background-color: rgba(245, 245, 245, 0.604);
-        border-radius: 1em;
-        position: relative;
-        top: 60px;
-    }
+            border-radius: 1em;
+            box-shadow: 0px 1px 10px grey;
+            text-align: center;
+            background-position: center;
+            background-size: auto;
+            background-repeat: no-repeat;
+            height: 150px;
+        }
+        .nombrePais {
+            text-transform: uppercase;
+            font-style: italic;
+            height: 100px;
+            font-size: 30px;
+            padding: 10px;
+            background-color: rgba(245, 245, 245, 0.604);
+            border-radius: 1em;
+            position: relative;
+            top: 60px;
+        }
     }
 </style>

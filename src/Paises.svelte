@@ -2,8 +2,6 @@
     import { onMount } from "svelte";
 
     let value = "";
-
-    var url = `https://disease.sh/v3/covid-19/countries/${value}`;
     var urlTodosLosPaises = `https://disease.sh/v3/covid-19/countries`;
 
     //VARIABLES WORLDOMETER
@@ -40,7 +38,6 @@
     let recuperadosPorMillonWorldometer;
     let criticosPorMillonWorldometer;
 
-    let estado = "oculto";
 
     // Obtenemos lista de paises
     let listaPaises = [];
@@ -54,13 +51,6 @@
             });
     });
 
-    let nombrePais;
-    let casos;
-
-    let labelsCasos = [];
-    let dataCasos = [];
-
-    let myChart = new Chart();
 
     function onChange() {
         fetch(`https://disease.sh/v3/covid-19/countries/${value}`)
@@ -74,22 +64,18 @@
                     latitudPaisWorldometer = pais.countryInfo.lat;
                     longitudPaisWorldometer = pais.countryInfo.long;
                     paisContinente = pais.continent;
-
                     //HOY
-
                     muertesPaisHoyWorldometer = pais.todayDeaths;
                     casosPaisHoyWorldometer = pais.todayCases;
                     recuperadosPaisHoyWorldometer = pais.todayRecovered;
                     casosActivosPaisWorldometer = pais.active;
                     casosCriticosWorldometer = pais.critical;
-
                     //GENERAL / TOTAL
                     casosPaisWorldometer = pais.cases;
                     muertesPaisWorldometer = pais.deaths;
                     recuperadosPaisWorldometer = pais.recovered;
                     testRealizadosWorldometer = pais.tests;
                     poblacionWorldometer = pais.population;
-
                     //TASAS
                     casosPorMillonWorldometer = pais.casesPerOneMillion;
                     muertesPorMillonWorldometer = pais.deathsPerOneMillion;
@@ -100,7 +86,6 @@
                     criticosPorMillonWorldometer = pais.criticalPerOneMillion;
                 }
             });
-
     }
 </script>
 

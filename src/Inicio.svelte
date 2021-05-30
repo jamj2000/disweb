@@ -126,7 +126,6 @@
         src:url("/fonts/Bevan-Regular.ttf");
     }
     :global(body) {
-        
         background-image: url("/images/icons/covid.jpg");
     }
 

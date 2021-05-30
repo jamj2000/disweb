@@ -11,17 +11,17 @@
         </li>
         <li class="item active">
             <Link to="/paises">
-                <span class="articulos">PAÍSES</span>
+                <span class="paises">PAÍSES</span>
             </Link>
         </li>
         <li class="item active">
             <Link to="/continentes">
-                <span class="clientes">CONTINENTES</span>
+                <span class="continentes">CONTINENTES</span>
             </Link>
         </li>
         <li class="item active">
             <Link to="/historico">
-                <span class="clientes">HISTÓRICO</span>
+                <span class="historico">HISTÓRICO</span>
             </Link>
         </li>
     </ul>
@@ -56,7 +56,7 @@
         transform: scale(1.4);
     }
     
-        @media (max-width: 412px) { /* 320 */
+        @media (max-width: 425px) {
             .menu {
                 padding: 10px;
             }
