@@ -3,7 +3,6 @@
 
     let value = "";
     var urlTodosLosPaises = `https://disease.sh/v3/covid-19/countries`;
-    var urlVacuna = `https://disease.sh/v3/covid-19/vaccine/coverage/countries/${value}?lastdays=30&fullData=false`;
 
     // Obtenemos lista de paises
     let listaPaises = [];
@@ -40,21 +39,15 @@
             .then((response) => response.json())
             .then((pais) => {
                 console.log("PAIS: " + pais.country);
-                casos = pais.timeline.cases;
                 nombrePais = pais.country.toLowerCase;
                 if (value.toLowerCase == nombrePais) {
-                    //console.log(pais.timeline.cases);
-
                     //PRIMERA GRAFICA - CASOS
-
                     labelsCasos = Object.keys(pais.timeline.cases);
                     dataCasos = Object.values(pais.timeline.cases);
                     labelsCasos = labelsCasos
                         .map((x) => x.split("/"))
                         .map((x) => x[1] + "/" + x[0] + "/" + x[2]);
-
                     // INICIO GRAFICA
-
                     let ctxCasos = document
                         .getElementById("graficaCasos")
                         .getContext("2d");
@@ -220,20 +213,13 @@
             fetch(`https://disease.sh/v3/covid-19/vaccine/coverage/countries/${value}?lastdays=30&fullData=false`)
             .then((response) => response.json())
             .then((vacuna) => { 
-
-                nombrePais = vacuna.country.toLowerCase;
-                
-
                     //GRAFICA VACUNAS
-
                     labelsVacunados = Object.keys(vacuna.timeline);
                     dataVacunados = Object.values(vacuna.timeline);
                     labelsVacunados = labelsVacunados
                         .map((x) => x.split("/"))
                         .map((x) => x[1] + "/" + x[0] + "/" + x[2]);
-
                     // INICIO GRAFICA
-
                     let ctxVacunados = document
                         .getElementById("graficaVacunados")
                         .getContext("2d");
@@ -244,7 +230,7 @@
                             labels: labelsVacunados,
                             datasets: [
                                 {
-                                    label: "Vacunados",
+                                    label: "Dosis de vacunas administradas",
                                     borderColor: "#00ead3",
                                     hoverBorderColor: "#907fa4",
                                     pointColor: "#385170",
